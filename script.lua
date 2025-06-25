@@ -1,0 +1,11 @@
+local v0=game:GetService("Players");local v1=game:GetService("RunService");local v2=game:GetService("UserInputService");local v3=v0.LocalPlayer;local v4=v3.Character or v3.CharacterAdded:Wait() ;local v5=v4:WaitForChild("HumanoidRootPart");local v6=false;local v7=50;local v8=Instance.new("ScreenGui",game:GetService("CoreGui"));v8.Name="FlyToggleGUI";local v10=Instance.new("TextButton");v10.Parent=v8;v10.Size=UDim2.new(1795 -(208 + 1587) ,150,0 + 0 ,40);v10.Position=UDim2.new(0,20,568 -(367 + 201) ,947 -(214 + 713) );v10.Text="Start Flying [F]";v10.BackgroundColor3=Color3.fromRGB(110 -50 ,180,425 -(87 + 263) );v10.TextColor3=Color3.fromRGB(64 + 191 ,41 + 214 ,1132 -(282 + 595) );v10.Font=Enum.Font.SourceSansBold;v10.TextSize=49 -29 ;v10.BorderSizePixel=0 + 0 ;local function v21() local v22=0 -0 ;while true do if (v22==(1638 -(1523 + 114))) then v10.BackgroundColor3=(v6 and Color3.fromRGB(180 + 20 ,50,71 -21 )) or Color3.fromRGB(1125 -(68 + 997) ,1450 -(226 + 1044) ,326 -251 ) ;break;end if (v22==(117 -(32 + 85))) then v6= not v6;v10.Text=(v6 and "Stop Flying [F]") or "Start Flying [F]" ;v22=1 + 0 ;end end end v10.MouseButton1Click:Connect(v21);v2.InputBegan:Connect(function(v23,v24) local v25=0 + 0 ;while true do if (v25==(957 -(892 + 65))) then if v24 then return;end if (v23.KeyCode==Enum.KeyCode.F) then v21();end break;end end end);v1.RenderStepped:Connect(function(v26) if (v6 and v5 and v4) then local v27=0 + 0 ;local v28;while true do if (v27==(0 -0)) then v28=v5.CFrame.LookVector * v7 * v26 ;v5.CFrame=v5.CFrame + v28 ;break;end end end end);
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+
+]]--
